@@ -1,39 +1,34 @@
-#include <bits/stdc++.h> 
-using namespace std; 
-
-string printSequence(string arr[], string input) 
-{ 
-	string output = ""; 
-	int n = input.length(); 
-	for (int i=0; i<n; i++) 
-	{ 
-		// Checking for space 
-		if (input[i] == ' ') 
-			output = output + "0"; 
-
-		else
-		{ 
-			int position = input[i]-'A'; 
-			output = output + arr[position]; 
-		} 
-	} 
-
-	return output; 
-} 
-
-int main() 
+#include<bits/stdc++.h>
+using namespace std;
+string printSequence(string str[], string input)
 {
-	string str[] = {"2","22","222", 
-					"3","33","333", 
-					"4","44","444", 
-					"5","55","555", 
-					"6","66","666", 
-					"7","77","777","7777", 
-					"8","88","888", 
-					"9","99","999","9999"
-				}; 
+    string output="";
+    for(int i=0;i<input.length();i++)
+    {
+        if(input[i]==' ')
+        output+=to_string(0);
+        else
+        {
+            int position=input[i]-'A';
+            output+=str[position];
+        }
+    }
+    return output;
+}
 
-	string input = "GEEKSFORGEEKS"; 
-	cout << printSequence(str, input); 
-	return 0; 
-} 
+int main()
+{
+    string res[]={ "2","22","222",                         //a  b  c
+		   "3","33","333",                         //d  e  f
+		   "4","44","444",                         //g  h  i
+		   "5","55","555",                         //j  k  l
+		   "6","66","666",                         //m  n  o
+		   "7","77","777","7777",                  //p  q  r  s
+		   "8","88","888",                         //t  u  v 
+                   "9","99","999","9999"};                 //w  x   y  z
+
+    
+
+    string input = "GEEKSFORGEEKS"; 
+	cout << printSequence(res, input);
+}
